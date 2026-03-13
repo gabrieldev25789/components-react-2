@@ -3,7 +3,7 @@
   background:white;
   padding:2.5rem;
   border-radius:16px;
-  width:350px;
+  width:50vh;
   box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
@@ -49,4 +49,12 @@ button{
 button:hover{
   background:#2563eb;
   transform:translateY(-1px);
+}
+
+#erro, 
+#infos{
+    background-color: black;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
 }
