@@ -1,9 +1,11 @@
-import React from 'react'
+import "./Component1.css"
 
-function Component1({nome}) {
+function Component1({nome, idade, profissao, cor}) {
   return (
-    <div>
-        <h1>Olá {nome}</h1>
+    <div className='component1-div' style={{background: cor}}>
+    <p>Olá {nome}</p>
+    <p>Você tem {idade} anos</p>
+    <p>Sua profissão é {profissao}</p>
     </div>
   )
 }
