@@ -1,4 +1,5 @@
 import Component1 from "./Components/Component1/Component1"
+import "../src/Components/Component1/Component1.css"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+    <div id="container">
       {pessoas.map((pessoa, index) => (
         <Component1 
           key={index}
@@ -22,6 +24,7 @@ function App() {
           cor={pessoa.cor}
         />
       ))}
+    </div>
     </>
   )
 }
