@@ -2,6 +2,9 @@ import Component1 from "./Components/Component1/Component1"
 import "../src/Components/Component1/Component1.css"
 
 
+import Form from "./Components/Form/Form"
+
+
 function App() {
 
   const pessoas = [
@@ -25,9 +28,9 @@ function App() {
         />
       ))}
     </div>
+    <Form />
     </>
   )
 }
-
 
 export default App
