@@ -1,0 +1,15 @@
+.component1-div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(47, 143, 207);
+    text-align: center;
+    margin: 1rem auto;
+    width: 50vh;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+p{
+    font-size: 1.6rem;
+    margin: 0.3rem 0;
+}
