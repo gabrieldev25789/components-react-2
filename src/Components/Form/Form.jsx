@@ -1,78 +1,103 @@
-import { useState } from "react"
 import "./Form.css"
 
-function Form() {
-    const [nome, setNome] = useState("")
-    const [idade, setIdade] = useState(null)
-    const [profissao, setProfissao] = useState("") 
-    const [erro, setErro] = useState("")
-    const [lista, setLista] = useState([])
+import { useState } from "react"
 
-function verificarForm(e){
+function Form() {
+
+  const [nome, setNome] = useState("")
+  const [idade, setIdade] = useState("")
+  const [profissao, setProfissao] = useState("")
+  const [erro, setErro] = useState("")
+  const [lista, setLista] = useState([])
+
+  function limpar(){
+    setNome("")
+    setIdade("")
+    setProfissao("")
+  }
+
+  function verificarForm(e){
     e.preventDefault()
+
     if(!nome || !idade || !profissao){
-        setErro("Preencha todos os campos")
-    }   
-    
-    setLista([...lista, {nome, idade, profissao}])
-}
+      setErro("Preencha todos os campos")
+      return
+    }
+
+    const novaPessoa = {
+      nome,
+      idade,
+      profissao
+    }
+
+    setLista([...lista, novaPessoa])
+
+    limpar()
+    setErro("")
+  }
 
   return (
 
-   <div className="form-container">
+    <div className="form-container">
 
-  <form onSubmit={verificarForm}>
+      <form onSubmit={verificarForm}>
 
-    <div>
-      <label>Nome</label>
-      <input 
-        type="text"
-        placeholder="Digite seu nome"
-        value={nome}
-        onFocus={() => setErro("")}
-        onChange={(e) => setNome(e.target.value)}/>
+        <h2>Formulario</h2>
+
+        <div>
+          <label>Nome:</label>
+          <input
+            type="text"
+            placeholder="Digite seu nome"
+            value={nome}
+            onFocus={() => setErro("")}
+            onChange={(e) => setNome(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label>Idade:</label>
+          <input
+            type="number"
+            placeholder="Digite sua idade"
+            value={idade}
+            onFocus={() => setErro("")}
+            onChange={(e) => setIdade(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label>Profissão:</label>
+          <input
+            type="text"
+            placeholder="Digite sua profissão"
+            value={profissao}
+            onFocus={() => setErro("")}
+            onChange={(e) => setProfissao(e.target.value)}
+          />
+        </div>
+
+        <button type="submit">Enviar</button>
+
+      </form>
+
+      {erro && (
+        <div id="erro">
+          <p>{erro}</p>
+        </div>
+      )}
+
+      {!erro && lista.map((pessoa, index) => (
+        <div id="infos" key={index}>
+          <ul>
+            <li>Seu nome é {pessoa.nome}</li>
+            <li>Você tem {pessoa.idade} anos</li>
+            <li>Sua profissão é {pessoa.profissao}</li>
+          </ul>
+        </div>
+      ))}
+
     </div>
-
-    <div>
-      <label>Idade</label>
-      <input 
-        type="number" 
-        placeholder="Digite sua idade"
-        value={idade}
-        onFocus={() => setErro("")}
-        onChange={(e)=> setIdade(e.target.value)}/>
-    </div>
-
-    <div>
-      <label>Profissão</label>
-      <input 
-      type="text" 
-      placeholder="Digite sua profissão"
-      value={profissao}
-      onFocus={() => setErro("")}  
-      onChange={(e)=> setProfissao(e.target.value)}/>
-    </div>
-
-    <button type="submit">Enviar</button>
-    { lista.map((lista, index)=>{
-        return (
-            <div id="infos">
-            <ul key={index}>
-                <li>Seu nome é {lista.nome}</li>
-                <li>Você tem {lista.idade} anos</li>
-                <li>Sua profissão é {lista.profissao}</li>
-            </ul>
-            </div>
-        )
-    }) }
-  </form>
-    {erro && <div id="erro">
-        <p>{erro}</p>
-    </div> }
-  
-</div>
-
-
   )
 }
 
