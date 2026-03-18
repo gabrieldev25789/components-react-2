@@ -1,12 +1,12 @@
 import "./infos.css"
 
-function Infos({id, nome, idade, profissao}) {
+function Infos({ nome, idade, profissao}) {
   return (
     <div>
-            <ul key={id}>
-                <li>{nome}</li>
-                <li>{idade}</li>
-                <li>{profissao}</li>
+            <ul>
+                <li>Nome: {nome}</li>
+                <li>Idade: {idade}</li>
+                <li>Profissão: {profissao}</li>
             </ul>
     </div>
   )

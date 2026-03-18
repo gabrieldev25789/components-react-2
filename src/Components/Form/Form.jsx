@@ -89,8 +89,9 @@ function Form() {
           <p>{erro}</p>
         </div>
       )}
+    </div>
 
-      {!erro && lista.map((pessoa, index) => (
+    {!erro && lista.map((pessoa, index) => (
       <div className="infos" key={index}>
         <Infos 
         nome={pessoa.nome}
@@ -98,8 +99,6 @@ function Form() {
         profissao={pessoa.profissao}/>
       </div>
       ))}
-
-    </div>
 
 </>
 

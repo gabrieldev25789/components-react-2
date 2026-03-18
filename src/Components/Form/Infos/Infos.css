@@ -1,18 +1,108 @@
-#erro, 
-.infos{
-    background: rgba(8, 8, 8, 0.65);
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 20px;
+.infos {
+    margin: 2rem auto;
+    width: 20%;
+    background: rgba(255, 255, 255, 0.08); /* transparente claro */
+    backdrop-filter: blur(10px); /* efeito vidro */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1rem 0;
+    border: 1px solid rgba(255,255,255,0.15);
 }
 
-.infos li{
-  list-style: none;
-  margin: 1rem 0;
-  border-bottom: 2px solid white;
-  padding-bottom: 0.5rem;
+.infos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infos li {
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.infos li:last-child {
+    border-bottom: none;
+}
+
+.infos li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* detalhe bonito */
+.infos li::before {
+    content: "•";
+    color: #00ffcc;
+    margin-right: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+    .infos {
+        width: 40%;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+    .infos {
+        width: 70%;
+    }
+}
+
+/* CELULAR PEQUENO */
+@media (max-width: 480px) {
+    .infos {
+        width: 90%;
+    }
+}
+
+.infos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infos li {
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* texto menor no celular */
+@media (max-width: 480px) {
+    .infos li {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+}
+
+.infos li:last-child {
+    border-bottom: none;
+}
+
+.infos li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* remove o movimento no mobile (fica mais suave) */
+@media (max-width: 768px) {
+    .infos li:hover {
+        transform: none;
+    }
+}
+
+.infos li::before {
+    content: "•";
+    color: #00ffcc;
+    margin-right: 0.8rem;
 }
