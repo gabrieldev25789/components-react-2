@@ -1,0 +1,18 @@
+#erro, 
+.infos{
+    background: rgba(8, 8, 8, 0.65);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.infos li{
+  list-style: none;
+  margin: 1rem 0;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+}

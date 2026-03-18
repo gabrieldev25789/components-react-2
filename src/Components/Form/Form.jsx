@@ -1,5 +1,8 @@
 import "./Form.css"
 
+import Infos from "./Infos/Infos"
+import "../../Components/Form/Infos/Infos.css"
+
 import { useState } from "react"
 
 function Form() {
@@ -37,7 +40,7 @@ function Form() {
   }
 
   return (
-
+<>
     <div className="form-container">
 
       <form onSubmit={verificarForm}>
@@ -52,7 +55,7 @@ function Form() {
             value={nome}
             onFocus={() => setErro("")}
             onChange={(e) => setNome(e.target.value)}
-          />
+          /> 
         </div>
 
         <div>
@@ -88,16 +91,18 @@ function Form() {
       )}
 
       {!erro && lista.map((pessoa, index) => (
-        <div id="infos" key={index}>
-          <ul>
-            <li>Seu nome é {pessoa.nome}</li>
-            <li>Você tem {pessoa.idade} anos</li>
-            <li>Sua profissão é {pessoa.profissao}</li>
-          </ul>
-        </div>
+      <div className="infos" key={index}>
+        <Infos 
+        nome={pessoa.nome}
+        idade={pessoa.idade}
+        profissao={pessoa.profissao}/>
+      </div>
       ))}
 
     </div>
+
+</>
+
   )
 }
 
