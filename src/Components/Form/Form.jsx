@@ -91,15 +91,19 @@ function Form() {
       )}
     </div>
 
-    {!erro && lista.map((pessoa, index) => (
-      <div className="infos" key={index}>
-        <Infos 
-        nome={pessoa.nome}
-        idade={pessoa.idade}
-        profissao={pessoa.profissao}/>
-      </div>
-      ))}
-
+    {!erro && (
+        <div className="infos-container">
+          {lista.map((pessoa, index) => (
+            <div className="infos" key={index}>
+              <Infos 
+                nome={pessoa.nome}
+                idade={pessoa.idade}
+                profissao={pessoa.profissao}
+              />
+            </div>
+          ))}
+        </div>
+    )}
 </>
 
   )
