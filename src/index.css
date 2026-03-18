@@ -14,3 +14,26 @@ body{
 
   color: white;
 }
+
+/* TABLET */
+@media (max-width: 1024px){
+  body{
+    background-position: center;
+  }
+}
+
+/* CELULAR */
+@media (max-width: 768px){
+  body{
+    background-position: top; /* mostra mais da imagem */
+    background-attachment: scroll; /* evita travamento */
+  }
+}
+
+/* CELULAR PEQUENO */
+@media (max-width: 480px){
+  body{
+    background-size: cover;
+    background-position: top;
+  }
+}
