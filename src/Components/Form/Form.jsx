@@ -13,6 +13,11 @@ function Form() {
   const [erro, setErro] = useState("")
   const [lista, setLista] = useState([])
 
+  function excluirPessoa(index) {
+  const novaLista = lista.filter((_, i) => i !== index)
+  setLista(novaLista)
+}
+
   function limpar(){
     setNome("")
     setIdade("")
@@ -99,6 +104,7 @@ function Form() {
                 nome={pessoa.nome}
                 idade={pessoa.idade}
                 profissao={pessoa.profissao}
+                 onDelete={() => excluirPessoa(index)}
               />
             </div>
           ))}
